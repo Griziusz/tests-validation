@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "b+c8DPTxcgktiGbUrtVCHCFCELfnr9NyN9oz2mGc1KlId1iG3PfIwnO8bq0epkSCu8IvlFu9wi3xl58VM4zsZg==",
+  "success": true,
+  "projectFilePath": "/home/grizius/Documents/Cours/2A/tests/PuissanceQuatre/MorpionApp.csproj",
+  "expectedPackageFiles": [
+    "/home/grizius/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.1/microsoft.aspnetcore.app.ref.8.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

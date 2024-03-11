@@ -1,0 +1,14 @@
+/home/grizius/Documents/Cours/2A/tests/PuissanceQuatre/bin/Debug/net8.0/MorpionApp
+/home/grizius/Documents/Cours/2A/tests/PuissanceQuatre/bin/Debug/net8.0/MorpionApp.deps.json
+/home/grizius/Documents/Cours/2A/tests/PuissanceQuatre/bin/Debug/net8.0/MorpionApp.runtimeconfig.json
+/home/grizius/Documents/Cours/2A/tests/PuissanceQuatre/bin/Debug/net8.0/MorpionApp.dll
+/home/grizius/Documents/Cours/2A/tests/PuissanceQuatre/bin/Debug/net8.0/MorpionApp.pdb
+/home/grizius/Documents/Cours/2A/tests/PuissanceQuatre/obj/Debug/net8.0/MorpionApp.GeneratedMSBuildEditorConfig.editorconfig
+/home/grizius/Documents/Cours/2A/tests/PuissanceQuatre/obj/Debug/net8.0/MorpionApp.AssemblyInfoInputs.cache
+/home/grizius/Documents/Cours/2A/tests/PuissanceQuatre/obj/Debug/net8.0/MorpionApp.AssemblyInfo.cs
+/home/grizius/Documents/Cours/2A/tests/PuissanceQuatre/obj/Debug/net8.0/MorpionApp.csproj.CoreCompileInputs.cache
+/home/grizius/Documents/Cours/2A/tests/PuissanceQuatre/obj/Debug/net8.0/MorpionApp.dll
+/home/grizius/Documents/Cours/2A/tests/PuissanceQuatre/obj/Debug/net8.0/refint/MorpionApp.dll
+/home/grizius/Documents/Cours/2A/tests/PuissanceQuatre/obj/Debug/net8.0/MorpionApp.pdb
+/home/grizius/Documents/Cours/2A/tests/PuissanceQuatre/obj/Debug/net8.0/MorpionApp.genruntimeconfig.cache
+/home/grizius/Documents/Cours/2A/tests/PuissanceQuatre/obj/Debug/net8.0/ref/MorpionApp.dll
