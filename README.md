@@ -44,3 +44,7 @@ On pourra ensuite faire appel à ces classes pour faire jouer le joueur courant.
 Si c'est un ordinateur, un autre objet implémentant l'interface joueur pourra donner au jeu ses propres classes d'affichage et d'entrée d'action, sous une même interface afin que le jeu ne soit pas au courant, et y réupérer les informations dont il a besoin et entrer l'action de jeu choisie.
 
 On pourra facilement tester le jeu, les autres classes n'étant pas modifiées par un tel changement, il suffira uniquement de tester ces nouvelles classes relatives à l'IA.
+
+Pour l'historisation, on peut imaginer une classe faisant le lien avec les fichiers de l'ordinateur, qui va être appelée dans la boucle principale du jeu, afin d'enregistrer la grille et le joueur courant.
+
+De la même manière il faudra que cette classe n'aie pas d'incidence sur l'état du jeu afin de ne pas casser les tests déjà faits.
