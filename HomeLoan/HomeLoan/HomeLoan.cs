@@ -15,6 +15,6 @@ public static class HomeLoan
 
     public static int CaculateMonthlyPayment(int borrowedAmount, int duration, decimal rate)
     {
-        return borrowedAmount / duration;
+        return (int)((decimal)borrowedAmount * (1m +((rate / 100m) / 12m)) / (decimal)duration);
     }
 }

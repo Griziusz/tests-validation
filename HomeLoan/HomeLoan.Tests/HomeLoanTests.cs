@@ -22,6 +22,8 @@ public class HomeLoanTests
     [InlineData(1000, 10, 0, 100)]
     [InlineData(10000, 10, 0, 1000)]
     [InlineData(10000, 100, 0, 100)]
+
+    [InlineData(1000, 1, 12, 1010)]
     public void CaculateMonthlyPayment_ShouldWork(int borrowedAmount, int duration, decimal rate, int expectedResult)
     {
         var actualResult = HomeLoan.CaculateMonthlyPayment(borrowedAmount, duration, rate);
