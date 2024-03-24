@@ -13,8 +13,11 @@ public static class HomeLoan
         Console.WriteLine(HelloWord());
     }
 
-    public static int CaculateMonthlyPayment(int borrowedAmount, int duration, decimal rate)
+    public static int CaculateMonthlyPayment(int borrowedAmount, int duration, decimal rateInPercent)
     {
-        return (int)((decimal)borrowedAmount * (1m +((rate / 100m) / 12m)) / (decimal)duration);
+        var rate = rateInPercent / 100m;
+        var monthlyRate = rate / 12m;
+        var totalAmountToRepay = borrowedAmount * (1 + monthlyRate);
+        return (int)(totalAmountToRepay / (decimal)duration);
     }
 }
