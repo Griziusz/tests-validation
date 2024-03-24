@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeLoan", "HomeLoan\HomeLoan.csproj", "{F4853AFC-FB1D-4FF0-93E2-DFEF7FA10952}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeLoan.Tests", "HomeLoan.Tests\HomeLoan.Tests.csproj", "{0BB6468C-860E-449E-953F-69ACAE7E5220}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F4853AFC-FB1D-4FF0-93E2-DFEF7FA10952}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4853AFC-FB1D-4FF0-93E2-DFEF7FA10952}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4853AFC-FB1D-4FF0-93E2-DFEF7FA10952}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4853AFC-FB1D-4FF0-93E2-DFEF7FA10952}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BB6468C-860E-449E-953F-69ACAE7E5220}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BB6468C-860E-449E-953F-69ACAE7E5220}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BB6468C-860E-449E-953F-69ACAE7E5220}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BB6468C-860E-449E-953F-69ACAE7E5220}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
