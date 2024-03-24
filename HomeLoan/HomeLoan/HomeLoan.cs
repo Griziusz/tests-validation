@@ -1,7 +1,7 @@
 ﻿
 namespace HomeLoan;
 
-public class HomeLoan
+public static class HomeLoan
 {
     public static string HelloWord()
     {
@@ -11,5 +11,10 @@ public class HomeLoan
     public static void Main()
     {
         Console.WriteLine(HelloWord());
+    }
+
+    public static int CaculateMonthlyPayment(int borrowedAmount, int duration, decimal rate)
+    {
+        return 0;
     }
 }
