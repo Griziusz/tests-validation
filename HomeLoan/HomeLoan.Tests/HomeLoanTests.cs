@@ -36,6 +36,7 @@ public class HomeLoanTests
     [InlineData(0, 1, 0, "rate should be greater than 0 (Parameter 'rateInPercent')")]
     [InlineData(1000, 1, 0, "rate should be greater than 0 (Parameter 'rateInPercent')")]
     [InlineData(-1000, 1, 12, "borrowedAmount should be positive (Parameter 'borrowedAmount')")]
+    [InlineData(1000, 0, 12, "duration should be greater than 0 (Parameter 'duration')")]
     public void CalculateMonthlyPayment_ShouldThrowArgumentException(double borrowedAmount, double duration, double rate, string expectedExceptionMessage)
     {
         Exception? caughtException = null;

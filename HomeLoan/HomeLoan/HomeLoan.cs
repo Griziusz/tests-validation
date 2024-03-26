@@ -23,6 +23,9 @@ public static class HomeLoan
         if (borrowedAmount < 0)
             throw new ArgumentException("borrowedAmount should be positive", "borrowedAmount");
 
+        if (!(duration > 0))
+            throw new ArgumentException("duration should be greater than 0", "duration");
+
         var rate = rateInPercent / 100;
         var monthlyRate = rate / 12;
         var monthlyPayment = (borrowedAmount * monthlyRate) / (1 - Math.Pow(1 + monthlyRate, -duration));
