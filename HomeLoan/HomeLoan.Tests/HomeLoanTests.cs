@@ -14,14 +14,7 @@ public class HomeLoanTests
 
     [Theory]
 
-    [InlineData(0, 1, 0, 0)]
-
-    [InlineData(1000, 1, 0, 1000)]
-    [InlineData(10000, 1, 0, 10000)]
-
-    [InlineData(1000, 10, 0, 100)]
-    [InlineData(10000, 10, 0, 1000)]
-    [InlineData(10000, 100, 0, 100)]
+    [InlineData(0, 1, 1, 0)]
 
     [InlineData(1000, 1, 12, 1010)]
     [InlineData(1000, 1, 0.12, 1000.1)]
@@ -31,5 +24,27 @@ public class HomeLoanTests
         var actualResult = HomeLoan.CaculateMonthlyPayment(borrowedAmount, duration, rate);
 
         Assert.Equal(expectedResult, actualResult);
+    }
+
+    [Theory]
+
+    [InlineData(0, 1, 0, "rate should be greater than 0 (Parameter 'rateInPercent')")]
+    [InlineData(1000, 1, 0, "rate should be greater than 0 (Parameter 'rateInPercent')")]
+    public void CalculateMonthlyPayment_ShouldThrowArgumentException(double borrowedAmount, double duration, double rate, string expectedExceptionMessage)
+    {
+        Exception? caughtException = null;
+
+        try
+        {
+            HomeLoan.CaculateMonthlyPayment(borrowedAmount, duration, rate);
+        }
+        catch(Exception e)
+        {
+            caughtException = e;
+        }
+
+        Assert.NotNull(caughtException);
+        Assert.IsType<ArgumentException>(caughtException);
+        Assert.Equal(expectedExceptionMessage, caughtException.Message);
     }
 }

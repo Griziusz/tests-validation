@@ -15,6 +15,9 @@ public static class HomeLoan
 
     public static decimal CaculateMonthlyPayment(decimal borrowedAmount, int duration, decimal rateInPercent)
     {
+        if (!(rateInPercent > 0))
+            throw new ArgumentException("rate should be greater than 0", "rateInPercent");
+
         var rate = rateInPercent / 100m;
         var monthlyRate = rate / 12m;
         var totalAmountToRepay = borrowedAmount * (1 + monthlyRate);
