@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace HomeLoan;
 
 public static class HomeLoan
@@ -10,17 +12,17 @@ public static class HomeLoan
 
     public static void Main()
     {
-        Console.WriteLine(HelloWord());
+        Console.WriteLine(CalculateMonthlyPayment(1000, 1, 12));
     }
 
-    public static decimal CaculateMonthlyPayment(decimal borrowedAmount, int duration, decimal rateInPercent)
+    public static double CalculateMonthlyPayment(double borrowedAmount, double duration, double rateInPercent)
     {
         if (!(rateInPercent > 0))
             throw new ArgumentException("rate should be greater than 0", "rateInPercent");
 
-        var rate = rateInPercent / 100m;
-        var monthlyRate = rate / 12m;
-        var totalAmountToRepay = borrowedAmount * (1 + monthlyRate);
-        return totalAmountToRepay / duration;
+        var rate = rateInPercent / 100;
+        var monthlyRate = rate / 12;
+        var monthlyPayment = (borrowedAmount * monthlyRate) / (1 - Math.Pow(1 + monthlyRate, -duration));
+        return monthlyPayment;
     }
 }

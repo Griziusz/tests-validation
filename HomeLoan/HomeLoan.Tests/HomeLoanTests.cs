@@ -1,9 +1,13 @@
+using System;
+using System.Reflection;
 using HomeLoan;
 
 namespace HomeLoan.Tests;
 
 public class HomeLoanTests
 {
+    private const double EPSILON = 1e-2;
+
     [Fact]
     public void Test1()
     {
@@ -19,11 +23,13 @@ public class HomeLoanTests
     [InlineData(1000, 1, 12, 1010)]
     [InlineData(1000, 1, 0.12, 1000.1)]
     [InlineData(0.1, 1, 1200, 0.2)]
-    public void CaculateMonthlyPayment_ShouldWork(decimal borrowedAmount, int duration, decimal rate, decimal expectedResult)
-    {
-        var actualResult = HomeLoan.CaculateMonthlyPayment(borrowedAmount, duration, rate);
 
-        Assert.Equal(expectedResult, actualResult);
+    [InlineData(1000, 12, 10, 87.92)]
+    public void CaculateMonthlyPayment_ShouldWork(double borrowedAmount, int duration, double rate, double expectedResult)
+    {
+        var actualResult = HomeLoan.CalculateMonthlyPayment(borrowedAmount, duration, rate);
+
+        Assert.Equal(expectedResult, actualResult, EPSILON);
     }
 
     [Theory]
@@ -36,7 +42,7 @@ public class HomeLoanTests
 
         try
         {
-            HomeLoan.CaculateMonthlyPayment(borrowedAmount, duration, rate);
+            HomeLoan.CalculateMonthlyPayment(borrowedAmount, duration, rate);
         }
         catch(Exception e)
         {
