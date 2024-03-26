@@ -32,7 +32,6 @@ public class HomeLoanTests
     }
 
     [Theory]
-
     [InlineData(0, 1, 0, "rate should be greater than 0 (Parameter 'rateInPercent')")]
     [InlineData(1000, 1, 0, "rate should be greater than 0 (Parameter 'rateInPercent')")]
     [InlineData(-1000, 1, 12, "borrowedAmount should be positive (Parameter 'borrowedAmount')")]
@@ -52,6 +51,26 @@ public class HomeLoanTests
 
         Assert.NotNull(caughtException);
         Assert.IsType<ArgumentException>(caughtException);
+        Assert.Equal(expectedExceptionMessage, caughtException.Message);
+    }
+
+    [Theory]
+    [InlineData(double.MaxValue, 1, double.MaxValue, "monthly payment is to high for the program to compute")]
+    public void CalculateMonthlyPayment_ShouldThrowException(double borrowedAmount, double duration, double rate, string expectedExceptionMessage)
+    {
+        Exception? caughtException = null;
+
+        try
+        {
+            HomeLoan.CalculateMonthlyPayment(borrowedAmount, duration, rate);
+        }
+        catch(Exception e)
+        {
+            caughtException = e;
+        }
+
+        Assert.NotNull(caughtException);
+        Assert.IsType<Exception>(caughtException);
         Assert.Equal(expectedExceptionMessage, caughtException.Message);
     }
 }

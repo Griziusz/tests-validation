@@ -29,6 +29,10 @@ public static class HomeLoan
         var rate = rateInPercent / 100;
         var monthlyRate = rate / 12;
         var monthlyPayment = (borrowedAmount * monthlyRate) / (1 - Math.Pow(1 + monthlyRate, -duration));
+
+        if (monthlyPayment > double.MaxValue)
+            throw new Exception("monthly payment is to high for the program to compute");
+
         return monthlyPayment;
     }
 }
