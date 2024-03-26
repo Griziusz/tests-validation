@@ -6,8 +6,6 @@ namespace HomeLoan.Tests;
 
 public class HomeLoanTests
 {
-    private const double EPSILON = 1e-2;
-
     [Fact]
     public void Test1()
     {
@@ -18,18 +16,19 @@ public class HomeLoanTests
 
     [Theory]
 
-    [InlineData(0, 1, 1, 0)]
+    [InlineData(0, 1, 1, 0, 0)]
 
-    [InlineData(1000, 1, 12, 1010)]
-    [InlineData(1000, 1, 0.12, 1000.1)]
-    [InlineData(0.1, 1, 1200, 0.2)]
+    [InlineData(1000, 1, 12, 1010, 1e-12)]
+    [InlineData(1000, 1, 0.12, 1000.1, 1e-9)]
+    [InlineData(0.1, 1, 1200, 0.2, 1e-12)]
 
-    [InlineData(1000, 12, 10, 87.92)]
-    public void CaculateMonthlyPayment_ShouldWork(double borrowedAmount, int duration, double rate, double expectedResult)
+    [InlineData(1000, 12, 10, 87.92, 1e-2)]
+    [InlineData(2_500_000, 25 * 12, 7, 17_669, 1)]
+    public void CaculateMonthlyPayment_ShouldWork(double borrowedAmount, int duration, double rate, double expectedResult, double epsilon)
     {
         var actualResult = HomeLoan.CalculateMonthlyPayment(borrowedAmount, duration, rate);
 
-        Assert.Equal(expectedResult, actualResult, EPSILON);
+        Assert.Equal(expectedResult, actualResult, epsilon);
     }
 
     [Theory]
