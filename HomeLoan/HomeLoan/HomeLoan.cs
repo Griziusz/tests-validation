@@ -10,9 +10,17 @@ public static class HomeLoan
         return "Hello, World!";
     }
 
-    public static void Main()
+    public static void Main(string[] args)
     {
-        Console.WriteLine(CalculateMonthlyPayment(1000, 1, 12));
+        if (args.Length != 3)
+            throw new ArgumentException($"Parrameters: <borrowedAmount> <duration> <rateInPercent>");
+
+        var borrowedAmount = Convert.ToDouble(args[0]);
+        var duration = Convert.ToInt32(args[1]);
+        var rateInPercent = Convert.ToDouble(args[2]);
+
+        var monthlyPayment = CalculateMonthlyPayment(borrowedAmount, duration, rateInPercent);
+        Console.WriteLine(monthlyPayment);
     }
 
     public static double CalculateMonthlyPayment(double borrowedAmount, double duration, double rateInPercent)
